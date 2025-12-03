@@ -16,11 +16,20 @@ target_include_directories(fogpassd_gnss
 
 add_executable(fogpassd
     src/main.cpp
+    src/locator.cpp
+    src/landmark_engine.cpp
+    src/alert_manager.cpp
+    src/ipc_handler.cpp
 )
 
 target_link_libraries(fogpassd
     PRIVATE
         fogpassd_gnss
+)
+
+target_include_directories(fogpassd
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 install(TARGETS fogpassd RUNTIME DESTINATION bin)

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -18,9 +19,14 @@ class GnssReader {
 
     bool initialize(const std::string &device_path);
     std::vector<GnssSample> poll();
+    bool isSignalStable() const;
+    std::optional<GnssSample> latestFix() const;
 
   private:
     std::string device_path_;
+    bool has_fix_{false};
+    bool stable_{false};
+    GnssSample last_sample_{};
 };
 
 }  // namespace fogpass
