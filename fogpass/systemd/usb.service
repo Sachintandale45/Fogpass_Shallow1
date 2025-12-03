@@ -1,0 +1,10 @@
+[Unit]
+Description=Fogpass Usb Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/usb
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

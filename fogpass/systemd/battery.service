@@ -1,0 +1,10 @@
+[Unit]
+Description=Fogpass Battery Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/battery
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
