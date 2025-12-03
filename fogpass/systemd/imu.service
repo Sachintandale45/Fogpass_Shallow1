@@ -1,0 +1,10 @@
+[Unit]
+Description=Fogpass Imu Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/imu
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

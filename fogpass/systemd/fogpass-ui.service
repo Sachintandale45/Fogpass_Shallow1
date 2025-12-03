@@ -1,0 +1,10 @@
+[Unit]
+Description=Fogpass Fogpass-ui Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/fogpass-ui
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
